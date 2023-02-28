@@ -35,12 +35,22 @@
 <!--                th:text="${e.name}">-->
 <!--        </option>-->
 <!--      </select>-->
-      <select th:field="*{category}">
-        <option th:each="element : ${categoryList}"
-        th:value="${element.id}"
-        th:text="${element.id}">
-        </option>
-      </select>
+<!--        <p th:each="element : ${categoryList}" th:value="${element.name}" th:text="${element.name}"></p>-->
+<!--      <select th:field="*{category}" >-->
+<!--        <option th:each="element : ${categoryList}"-->
+<!--        th:value="${element.id}"-->
+<!--        th:text="${element.name}">-->
+<!--        </option>-->
+<!--      </select>-->
+
+        <select >
+<!--            <option >&#45;&#45;Chọn danh mục&#45;&#45;</option>-->
+            <option th:each="c : ${categoryList}" th:value="${c.id}" th:text="${c.name}"></option>
+        </select>
+        <script th:inline="javascript">
+            /* Hiển thị nội dung của biến categoryList */
+            console.log([[${categoryList}]]);
+        </script>
     </div>
     <div class="mb-3">
       <label for="name" class="form-label">image</label>

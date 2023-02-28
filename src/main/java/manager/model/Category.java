@@ -1,22 +1,21 @@
 package manager.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
-    @OneToMany(mappedBy = "category",cascade = CascadeType.REMOVE)
-    private List<Product>productList;
+//    @OneToMany(mappedBy = "category",cascade = CascadeType.REMOVE)
+//    private List<Product>productList;
 
 
     public Category() {
     }
 
-    public Category(int id, String name) {
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -25,11 +24,11 @@ public class Category {
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -21,6 +21,6 @@ public class ClassroomFormatter implements Formatter<Category> {
 
     @Override
     public String print(Category object, Locale locale) {
-        return null;
+        return "abc";
     }
 }
